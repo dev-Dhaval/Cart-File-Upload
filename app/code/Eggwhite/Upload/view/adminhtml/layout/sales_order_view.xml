@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Eggwhite_Upload extension
+ *
+ *
+ * @category Eggwhite Cartupload
+ * @package  Eggwhite_Upload
+ * @author   D.V <Eggwhite Dev>
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="admin.scope.col.wrap" htmlClass="admin__old" />
+	<referenceContainer name="left">
+            <referenceBlock name="sales_order_tabs">
+		<action method="addTab">
+                    <argument name="name" xsi:type="string">order_info</argument>
+                    <argument name="block" xsi:type="string">order_tab_info</argument>
+                </action>
+		<action method="addTabAfter">
+                    <argument name="name" xsi:type="string">order_upload</argument>
+                    <argument name="block" xsi:type="string">Eggwhite\Upload\Block\Adminhtml\Order\View\Upload</argument>
+		    <argument name="after" xsi:type="string">order_history</argument>
+		</action>
+	    </referenceBlock>
+        </referenceContainer>
+    </body>
+</page>

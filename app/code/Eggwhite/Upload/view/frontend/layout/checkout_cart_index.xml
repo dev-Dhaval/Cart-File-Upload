@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Eggwhite_Upload extension
+ *
+ *
+ * @category Eggwhite Cartupload
+ * @package  Eggwhite_Upload
+ * @author   D.V <Eggwhite Dev>
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+	<css src="Eggwhite_Upload::css/styles.css"/>
+	<script src="Eggwhite_Upload::js/custom.js"/>
+    </head>
+    <body>
+        <referenceContainer name="page.messages">
+            <block class="Magento\Checkout\Block\Cart\ValidationMessages" name="checkout.cart.validationmessages"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+	    <block class="Eggwhite\Upload\Block\Index\Index" name="upload_index_index" template="Eggwhite_Upload::upload_index_index.phtml" after="checkout.cart"/>
+        </referenceContainer>
+     </body>
+</page>

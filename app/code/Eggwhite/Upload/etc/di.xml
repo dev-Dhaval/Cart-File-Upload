@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Eggwhite_Upload extension
+ *
+ *
+ * @category Eggwhite Cartupload
+ * @package  Eggwhite_Upload
+ * @author   D.V <Eggwhite Dev>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+</config>

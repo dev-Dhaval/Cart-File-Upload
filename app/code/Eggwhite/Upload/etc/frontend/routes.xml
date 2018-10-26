@@ -1,0 +1,17 @@
+<!--
+/**
+ * Eggwhite_Upload extension
+ *
+ *
+ * @category Eggwhite Cartupload
+ * @package  Eggwhite_Upload
+ * @author   D.V <Eggwhite Dev>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/App/etc/routes.xsd">
+    <router id="standard">
+        <route id="upload" frontName="upload">
+            <module name="Eggwhite_Upload" />
+        </route>
+    </router>
+</config>

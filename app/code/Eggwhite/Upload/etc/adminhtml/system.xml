@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Eggwhite_Upload extension
+ *
+ *
+ * @category Eggwhite Cartupload
+ * @package  Eggwhite_Upload
+ * @author   D.V <Eggwhite Dev>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <tab id="Eggwhite" translate="label" sortOrder="1000">
+            <label>Eggwhite</label>
+        </tab>
+        <section id="catrupload" translate="label" type="text" sortOrder="1000" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Cart file Upload</label>
+            <tab>Eggwhite</tab>
+            <resource>Eggwhite_Upload::Upload</resource>
+            <group id="active_display" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Setting</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <backend_model>Magento\Contact\Model\System\Config\Backend\Links</backend_model>
+                </field>
+		<field id="size" translate="label comment" type="text" sortOrder="10" showInDefault="1" >
+                    <label>Maximum Upload File Size</label>
+                    <comment>File size in Mb. eg. 3</comment>
+                </field>
+		<field id="maxfile" translate="label comment" type="text" sortOrder="10" showInDefault="1" >
+                    <label>Upload maximum no of files</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

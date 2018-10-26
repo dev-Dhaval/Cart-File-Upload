@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Eggwhite_Upload extension
+ *
+ *
+ * @category Eggwhite Cartupload
+ * @package  Eggwhite_Upload
+ * @author   D.V <Eggwhite Dev>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_place_before">
+        <observer name="save_order" instance="Eggwhite\Upload\Observer\AfterPlaceOrderObserver" />
+    </event>
+     <event name="customer_data_object_login">
+        <observer name="merge_after_observer" instance="Eggwhite\Upload\Observer\AfterCustomerLoginObserver" />
+    </event>
+</config>
+

@@ -1,0 +1,175 @@
+/**
+ * Eggwhite_Upload extension
+ *
+ *
+ * @category Eggwhite Cartupload
+ * @package  Eggwhite_Upload
+ * @author   D.V <Eggwhite Dev>
+ */
+
+.custom-upload-cart { display: inline-block; vertical-align: top; width: 100%; float:left;margin: 0 0 20px;}
+.custom-upload-cart .cart-table { width: 100%; }
+.custom-cart { display: inline-block; vertical-align: top; width: 100%;}
+.dd_upload { border: 1px solid #f0f0f0; display: block; padding: 8px;}
+.dd_upload > form { border-bottom: 2px solid #e2e2e2; padding:0 0 5px 0;}
+.dyanamic-table01{ width:100%;}
+.dd_upload form + form{ border-bottom: 0;overflow:hidden;}
+.upload-002{ width:100%;overflow:hidden;}
+.left-site002{ float:left;}
+.right-site002{ float:right;margin-right: 0px;}
+.btn-upload{text-align:right;}
+.total_files{   display: inline-block;
+    float: right;
+    margin-top: 6px;
+    text-align: center;}
+.total_files0{   display: inline-block;
+    float: right;
+    margin-top: 6px;
+    text-align: center;}
+.dynamic-table01 .even{background:#fff;}
+.btn-remove3{text-align:center;}
+.dd_upload{ background-color: #F5F5F5;}
+.remove_files {background: #ccc none repeat scroll 0 0;}
+.footer-area{margin-top:12px;}
+.dyanamic-table01 .value > label {vertical-align: top;}
+.dyanamic-table01 .value-img > label {vertical-align: top;}
+a.file-link label{ cursor:pointer;}
+a:hover.file-link label{text-decoration:underline;} 
+@media only screen 
+and (min-device-width : 980px) 
+and (max-device-width : 1024px)  { 
+    .custom-upload-cart {
+        width: 100%;
+    }
+}
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 979px)  { 
+    .custom-upload-cart {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 767px){
+    .custom-upload-cart { width: 100%;}
+}
+.custom-upload-cart{margin-top:50px;}
+.value-img img{height:40px;}
+.btn-remove.btn-remove2
+{
+    background:transparent url("../images/close.png") no-repeat scroll center center / 10px auto;
+    border: 0px solid;
+    border-radius: 20px;
+    display: inline-block;
+    line-height: 15px;
+    text-decoration: none;
+    height:15px;
+    width:15px;
+}
+.boxes #my-orders-table-file td{vertical-align:middle;border:0px;}
+.order-item-row{
+    background: #f3f3f3 none repeat scroll 0 0;
+    padding: 15px 10px;
+    vertical-align: middle;}
+.order-item-row.even {background: #fafafa none repeat scroll 0 0;}
+.order-item-row .uploadimage img{height:40px;}
+.footer-counter{text-align:right; padding-right: 30px;}
+.button.btn-upload{margin-right:20px;}
+.comment textarea
+{
+    width:250px;
+    border:1px solid #e6e6e6;
+    font-size: 13px;
+}
+.commentupload.button {
+    background:#fff url("../images/comment.png") no-repeat scroll 4px center / 16px auto;
+    border: 1px solid #d3d3d3;
+    color: #848484;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    height: 10px;
+    line-height: 11px;
+    padding: 6px 7px 6px 25px;
+    min-width: 28px;
+    vertical-align: bottom;
+    bottom: 3px;
+    right: 3px;
+    position: absolute;
+
+}
+.commentupload.button.progress{
+    background:#fff url("../images/loader.gif") no-repeat scroll 4px center;
+}
+.commentupload.button.complete{
+    background:#fff url("../images/complete.png") no-repeat scroll 5px center / 15px auto;
+}
+.dynamic-table01 .comment{
+    position:relative;
+}
+.carts-cols {
+    display: inline-block;
+    vertical-align: middle;
+}
+.carts-cols.col-1
+{
+    text-align: left;
+    width: 45px;
+    width: 35px;
+}
+.carts-cols.col-2
+{
+    width: auto;	
+    margin-right: 40px;
+}
+.value.carts-cols.col-3{
+    width:25%;
+}
+.btn-remove3.carts-cols.col-5
+{
+    float: right;
+    margin-right: 60px;
+    margin-top: 29px;
+}
+.cart-row
+{
+    padding:10px;
+}
+.thead .col
+{
+    display: inline-block;
+    font-weight: bold;
+    width: 14%;
+}
+.tbody .col
+{
+    display: inline-block;
+    vertical-align: middle;
+    width: 14%;
+}
+.thead .col.price,.tbody .col.price {
+    width: 30%;
+}
+.thead .col.comment,.tbody .col.comment{
+    width: 40%;
+}
+#my-orders-table-file .thead{
+    padding:10px;
+}
+.mobi-label{display:none;font-weight:bold;}
+@media only screen and (max-width: 767px){
+    .carts-cols.col-2{margin-right:10px;}
+    .value.carts-cols.col-3{width:auto;}
+    .dynamic-table01 .comment{margin:10px 0;}
+    .btn-remove3.carts-cols.col-5{margin-right:0px;}
+    #remove_files{margin:0px; }
+    .right-site002 {
+       float: left;
+       margin: 10px 0;
+    }	
+    #my-orders-table-file .thead{display:none;}
+    .mobi-label{display:inline-block;margin-right:10px;}
+    .tbody .col,.tbody .col.price,.tbody .col.comment{display:block;margin:10px 0;width:100%;}
+}
+.overlimit{
+	color: #ac0000;	
+}

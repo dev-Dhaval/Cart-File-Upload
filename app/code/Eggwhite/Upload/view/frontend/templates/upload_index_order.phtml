@@ -1,0 +1,53 @@
+<?php
+/**
+ * Eggwhite_Upload extension
+ *
+ *
+ * @category Eggwhite Cartupload
+ * @package  Eggwhite_Upload
+ * @author   D.V <Eggwhite Dev>
+ */
+
+
+if($block->isEnable()){
+$result = $this->getUploadCollection();
+$url = $block->getUploadpath();
+?>
+<div class="block block-order-details-view">
+    <div class="block-title">
+        <strong><?php echo __('Uploaded File Information'); ?></strong>
+    </div>
+    <div class="block-content">
+            <div class="boxes">
+		<div class="box-content">
+		<div summary="Items Ordered" id="my-orders-table-file" class="data table ">
+	        <div class="thead">
+		        <div class="col name"><?php echo __('File Type'); ?></div>
+		        <div class="col sku"><?php echo __('Thumbnail'); ?></div>
+		        <div class="col price"><?php echo __('File Name'); ?></div>
+			<div class="col comment"><?php echo __('Comment'); ?></div>
+		</div>
+		<div class="tbody">
+		    <?php $cnt = 1; foreach($result as $item){ ?>
+			<div class="order-item-row <?php if($cnt % 2 == 0) { echo 'even';}?>" >
+		    	<div class="col name"><label class="mobi-label"><?php echo __('Type'); ?></label><?php echo $item->getType(); ?></div>
+			<div class="col uploadimage">
+			<?php
+				$_ext = pathinfo($item->getFilename(), PATHINFO_EXTENSION);
+				if ($_ext == 'jpeg' || $_ext == 'jpg' || $_ext == 'png' || $_ext == 'ico' || $_ext == 'gif') { ?>
+					<a target="_blank" href="<?php echo $url.$item->getFilename(); ?>"><img src="<?php echo $url.$item->getFilename(); ?>" height="40" width="45"></a>
+				<?php } else { ?>
+					<a target="_blank" href="<?php echo $url.$item->getFilename(); ?>"><img src="<?php echo $url.'icons/'.$_ext.'.png'; ?>" height="40" width="45"></a>
+				<?php } ?>
+			</div>
+			<div class="col price"><label class="mobi-label"><?php echo __('Name'); ?></label><a target="_blank" href="<?php echo $url.$item->getFilename(); ?>"><?php echo $item->getFilename(); ?></a></div>
+			<div class="col comment"><label class="mobi-label"><?php echo __('Comment'); ?></label><?php echo $item->getComments(); ?></div>
+		    </div>
+				<?php $cnt++; } ?>
+		 </div>
+        	</div>
+		</div>
+             </div>
+    </div>
+</div>
+<?php } ?>

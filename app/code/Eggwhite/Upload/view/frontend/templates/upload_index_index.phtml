@@ -1,0 +1,78 @@
+<?php 
+/**
+ * Eggwhite_Upload extension
+ *
+ *
+ * @category Eggwhite Cartupload
+ * @package  Eggwhite_Upload
+ * @author   D.V <Eggwhite Dev>
+ */
+
+
+if($block->isEnable() && $block->emptyCart()){ ?>
+<div class="custom-upload-cart">
+<div class="custom-cart">
+<h2><span class="page-title-wrapper"><?php echo __('Cart File Upload'); ?></span></h2>
+<div class="dd_upload">
+<form action="<?php echo $this->getUrl('upload/index/post'); ?>" method="post" enctype="multipart/form-data">
+                    <div class="upload-002">
+                        <div class="first last">
+                            <div class="a-right cart-footer-actions last">
+                                <span class="left-site002"><input id="file_upload" type="file" name="file_upload" class="" /></span>
+                                <input id="file_upload_path" class="required-entry" type="hidden" name="file_upload_path">
+				<input class="required-entry" type="hidden" name="file_upload_type" value="billing_file">
+                                <span class="right-site002"><input type="submit" value="Upload File" name="submit" class="action primary button btn-upload"></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+<form action="<?php echo $this->getUrl('upload/index/massdelete'); ?>" method="post" enctype="multipart/form-data">
+<div class="dynamic-table01">
+<?php
+$url = $block->getUploadpath();
+$cntr = 1;
+$uploadCollectionData = $block->getUploadCollection();
+if(count($uploadCollectionData)) {
+	foreach ($uploadCollectionData as $uploadItem) { ?>
+		<div class="<?php if($cntr%2 == 0) { echo 'even'; }?> cart-row">
+		    <div class="carts-cols col-1"><input type="checkbox" name="massdelete[]" id="massdelete" value="<?php echo $uploadItem->getId(); ?>"/></div>
+		    <div class="value-img carts-cols col-2">
+			   <?php
+				$_exts = $uploadItem->getType();
+				$_ext = pathinfo($uploadItem->getFilename(), PATHINFO_EXTENSION);
+				 if ($_ext == 'jpeg' || $_ext == 'jpg' || $_ext == 'png' || $_ext == 'ico' || $_ext == 'gif') {
+					?>
+					<a target="_blank" href="<?php echo $url.$uploadItem->getFilename(); ?>">
+					<img src="<?php echo $url.$uploadItem->getFilename(); ?>" height="40" width="45"/></a>
+					<?php } else { ?>
+					<a target="_blank" href="<?php echo $url.$uploadItem->getFilename(); ?>">
+					<img src="<?php echo $url.'icons/'.$_ext.'.png'; ?>" height="40" width="45"/></a>
+					<?php } ?>
+			</a>
+		    </div>
+		    <div class="value carts-cols col-3"><a value="" target="_blank" href="<?php echo $this->getUrl('pub/media').'upload/'.$uploadItem->getFilename(); ?>" class="file-link"><label><?php echo $uploadItem->getFilename(); ?></label></a></div>
+		    <div class="comment carts-cols col-4">
+			<textarea name="comment" rows="2" cols="2" id="comment<?php echo $uploadItem->getId(); ?>"><?php if($uploadItem->getComments()){ echo $uploadItem->getComments(); }else{echo __('Comment'); } ?></textarea><div data-url="<?php echo $block->getBaseCommentUrl(); ?>" title="Update Comment"  class="commentupload button" data-id="<?php echo $uploadItem->getId(); ?>"><span id="update<?php echo $uploadItem->getId(); ?>" ><?php echo __('Save'); ?></span></div></div>
+		    <div class="btn-remove3 carts-cols col-5"><a title="Remove File" href="<?php echo $block->getDeleteUrl($uploadItem->getId()); ?>" class="btn-remove btn-remove2 "></a>
+		    </div>
+		</div>
+		<div class="upload-image">
+		</div>
+		<?php $cntr++; } } ?>
+	<div class="footer-area">
+	<?php if(count($uploadCollectionData)){ ?><div colspan="4"><input type="submit" value="Remove Files" name="submit" id="remove_files" class="remove_files button action primary"></td><?php } ?>
+		<span class="overlimit">
+	<?php   $overLimit = $block->getFileCount(count($uploadCollectionData));
+		if($overLimit)
+		{
+			echo $block->escapeHtml(__('Uploaded (%1) files is over limit. Please remove over limit file or it will remove randomly on place order time.',$overLimit));
+		} ?>
+		</div>
+	<div class="total_files counts"><div class="footer-counter"><?php echo __("Total (".count($uploadCollectionData).") files."); ?></div></div>
+	</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<?php } ?>
