@@ -9,7 +9,6 @@
  */
 
 namespace Eggwhite\Upload\Model;
-use Magento\Framework\Object;
 
 class Upload extends \Magento\Framework\Model\AbstractModel
 {
